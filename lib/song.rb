@@ -61,7 +61,10 @@ class Song
   def table_name_for_insert
     self.class.table_name
   end
+  
+  #In fact, we already know how to programmatically invoke a method, without knowing the exact name of the method, using the #send method.
 
+#Let's iterate over the column names stored in #column_names and use the #send method with each individual column name to invoke the method by that same name and capture the return value:
 
   def values_for_insert
     values = []
