@@ -27,6 +27,8 @@ class Song
     table_info.each do |row|
       column_names << row["name"]
     end
+    #We iterate over the resulting array of hashes to collect just the name of each column. We call #compact on that just to be safe and get rid of any nil values that may end up in our collection.
+    
     column_names.compact
   end
 
