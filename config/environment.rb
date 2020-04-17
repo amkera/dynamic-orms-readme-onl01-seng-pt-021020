@@ -19,3 +19,10 @@ SQL
 
 DB[:conn].execute(sql)
 DB[:conn].results_as_hash = true
+
+#Lastly, we use the #results_as_hash method, available to use from the SQLite3-Ruby gem. T
+#This method says: when a SELECT statement is executed, don't return a database row as an array, return it as a hash with the column names as keys.
+
+
+
+
