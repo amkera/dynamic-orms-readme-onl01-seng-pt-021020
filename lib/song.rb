@@ -70,9 +70,13 @@ class Song
     end
     values.join(", ")
   end
+  
+  #when we save our Ruby object, we should not include the id column name or insert a value for the id column. Therefore, we need to remove "id" from the array of column names returned from the method call above:
+  
 
   def col_names_for_insert
     self.class.column_names.delete_if {|col| col == "id"}.join(", ")
+    #returns ["name", "album"]
   end
 
   def self.find_by_name(name)
