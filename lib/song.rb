@@ -10,8 +10,8 @@ class Song
   
   #This method takes the name of the class, referenced by the self keyword, turns it into a string with #to_s, downcases (or "un-capitalizes") that string and then "pluralizes" it, or makes it plural.
   
+  #The #pluralize method is provided to us by the active_support/inflector code library, required at the top of lib/song.rb.
   
-
   def self.column_names
     DB[:conn].results_as_hash = true
 
