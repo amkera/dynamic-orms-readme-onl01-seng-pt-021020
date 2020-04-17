@@ -7,6 +7,10 @@ class Song
   def self.table_name
     self.to_s.downcase.pluralize
   end
+  
+  #This method takes the name of the class, referenced by the self keyword, turns it into a string with #to_s, downcases (or "un-capitalizes") that string and then "pluralizes" it, or makes it plural.
+  
+  
 
   def self.column_names
     DB[:conn].results_as_hash = true
