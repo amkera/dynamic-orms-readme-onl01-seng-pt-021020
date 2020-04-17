@@ -19,7 +19,7 @@ class Song
     sql = "pragma table_info('#{table_name}')"
     
     
-    #This line of code that utilizes PRAGMA will return to us (thanks to our handy #results_as_hash method) an array of hashes describing the table itself.
+    #This line of code that utilizes PRAGMA will return to us (thanks to our handy #results_as_hash method) an array of hashes describing the table itself.  Each hash will contain information about one column. 
     
     
     table_info = DB[:conn].execute(sql)
