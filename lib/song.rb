@@ -21,7 +21,6 @@ class Song
     
     #This line of code that utilizes PRAGMA will return to us (thanks to our handy #results_as_hash method) an array of hashes describing the table itself.  Each hash will contain information about one column. 
     
-    
     table_info = DB[:conn].execute(sql)
     column_names = []
     table_info.each do |row|
@@ -71,6 +70,7 @@ class Song
     self.class.column_names.each do |col_name|
       values << "'#{send(col_name)}'" unless send(col_name).nil?
     end
+    #We need comma separated values for our SQL statement. Let's join this array into a string:
     values.join(", ")
   end
   
