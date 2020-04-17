@@ -77,6 +77,8 @@ class Song
   def col_names_for_insert
     self.class.column_names.delete_if {|col| col == "id"}.join(", ")
     #returns ["name", "album"]
+    #Notice that the column names in the statement are comma separated. Our column names returned by the code above are in an array. Let's turn them into a comma separated list, contained in a string.
+    #Returns "name, album"
   end
 
   def self.find_by_name(name)
