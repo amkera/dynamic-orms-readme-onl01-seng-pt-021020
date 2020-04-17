@@ -17,8 +17,11 @@ class Song
     
     #Need to query the table for names of its columns 
     sql = "pragma table_info('#{table_name}')"
-    #
-
+    
+    
+    #This line of code that utilizes PRAGMA will return to us (thanks to our handy #results_as_hash method) an array of hashes describing the table itself.
+    
+    
     table_info = DB[:conn].execute(sql)
     column_names = []
     table_info.each do |row|
