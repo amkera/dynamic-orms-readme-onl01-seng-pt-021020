@@ -44,7 +44,9 @@ class Song
     end
   end
   
-  
+  #Here, we define our method to take in an argument of options, which defaults to an empty hash. We expect #new to be called with a hash, so when we refer to options inside the #initialize method, we expect to be operating on a hash.
+
+  #We iterate over the options hash and use our fancy metaprogramming #send method to interpolate the name of each hash key as a method that we set equal to that key's value. As long as each property has a corresponding attr_accessor, this #initialize method will work.
 
   def save
     sql = "INSERT INTO #{table_name_for_insert} (#{col_names_for_insert}) VALUES (#{values_for_insert})"
