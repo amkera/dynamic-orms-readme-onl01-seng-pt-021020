@@ -53,10 +53,15 @@ class Song
     DB[:conn].execute(sql)
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM #{table_name_for_insert}")[0][0]
   end
+  
+  #Luckily for us, we already have a method to give us the table name associated to any given class: <class name>.table_name.
+
+#Recall, however, that the conventional #save is an instance method. So, inside a #save method, self will refer to the instance of the class, not the class itself. In order to use a class method inside an instance method, we need to do the following:
 
   def table_name_for_insert
     self.class.table_name
   end
+
 
   def values_for_insert
     values = []
