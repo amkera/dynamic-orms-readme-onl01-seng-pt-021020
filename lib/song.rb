@@ -31,6 +31,8 @@ class Song
     
     column_names.compact
   end
+  
+  #Now that we have a method that returns us an array of column names, we can use this collection to create the attr_accessors of our Song class.
 
   self.column_names.each do |col_name|
     attr_accessor col_name.to_sym
